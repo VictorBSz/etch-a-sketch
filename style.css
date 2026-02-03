@@ -17,3 +17,27 @@
 .grid {
     outline: solid white;
 }
+
+#header {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid green;
+    height: 200px;
+}
+
+#options {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+button {
+    margin-block: 5px;
+    justify-content: space-between;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+
+}
