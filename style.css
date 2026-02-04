@@ -19,6 +19,7 @@
 
 #header {
     display: flex;
+    margin: 20px;
     flex-direction: column;
     height: 200px;
 }
@@ -30,7 +31,16 @@
     flex-wrap: wrap;
 }
 
+.options {
+    margin: 20px 0px;
+    width: 220px;
+    display: flex;
+    justify-content: space-between;
+}
+
 button {
+    display: flex;
+    flex-direction: column;
     margin-block: 5px;
     justify-content: space-between;
     width: 100px;
@@ -38,4 +48,9 @@ button {
     align-items: center;
     justify-content: center;
     color: rgb(red, green, blue);
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
 }

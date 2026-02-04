@@ -15,7 +15,6 @@ function squareGrid(n) {
             div1.style.width=`${960/n}px`
             div1.style.height=`${960/n}px`
             container.appendChild(div1)
-            console.log(`created div number ${row+1}`)
         }
     }
 }
