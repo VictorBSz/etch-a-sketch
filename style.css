@@ -8,7 +8,6 @@
     flex-wrap: wrap;
     top: 30px;
     position: relative;
-    border: 1px solid black;
     margin: 0 auto;
     height: 960px;
     width: 960px;
@@ -21,7 +20,6 @@
 #header {
     display: flex;
     flex-direction: column;
-    border: 1px solid green;
     height: 200px;
 }
 
@@ -39,5 +37,5 @@ button {
     height: 100px;
     align-items: center;
     justify-content: center;
-
+    color: rgb(red, green, blue);
 }

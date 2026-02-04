@@ -3,6 +3,8 @@ const reset = document.getElementById("reset")
 const title = document.getElementById("title")
 const create = document.getElementById("create")
 
+
+// FUNCTIONS
 function squareGrid(n) {
     title.textContent = `This is a ${n} by ${n} grid`
     for(let row = 0; row < n; row++) {
@@ -36,20 +38,29 @@ function createGrid() {
 }
 
 function resetGrid() {
-    let squares = document.querySelectorAll(".grid")
-    squares.forEach((sq) => (
-    sq.style.background = "purple"
-    ))
-}
-
-function resetGrid() {
     const square = document.querySelectorAll(".grid")
     square.forEach((sq) => sq.style.background="purple")
 }
 
-container.addEventListener("mouseover", e => (
-    e.target.style.background = "green"
-));
+function randomNumber(max) {
+    return Math.floor(Math.random()*(max + 1));
+}
+
+function randomColor() {
+    let r = randomNumber(255);
+    let g = randomNumber(255);
+    let b = randomNumber(255);
+    return [r,g,b]
+}
+
+
+// EVENTS
+container.addEventListener("mouseover", (e) => {
+    if (e.target.classList.contains("grid")) {
+    const [r,g,b] = randomColor()
+    e.target.style.background = `rgb(${r}, ${g}, ${b})`
+    }
+});
 
 reset.addEventListener("click", resetGrid)
 create.addEventListener("click", createGrid)
