@@ -34,6 +34,7 @@ h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
     background: linear-gradient(45deg, #996dff, #df6dff);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -112,12 +113,21 @@ button:hover {
 }
 
 #selector {
-    height: 42px;
+    height: 1px;
     border: none;
-    width: 85px
+    width: 1px
+}
+
+#colorOpen {
+    height: 42px;
 }
 
 input[type="color"] {
+    display: flex;
+    position: absolute;
+    z-index: -2;
+    left: 56%;
+    top: 17%;
     background: none;
     appearance: none;
     border: none;

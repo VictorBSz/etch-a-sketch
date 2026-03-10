@@ -3,6 +3,7 @@ const reset = document.getElementById("reset")
 const title = document.getElementById("title")
 const create = document.getElementById("create")
 const random = document.getElementById("random")
+const colorOpen = document.getElementById("colorOpen")
 const selector = document.getElementById("selector")
 
 let isRandomMode = false;
@@ -44,7 +45,7 @@ function createGrid() {
 
 function resetGrid() {
     const square = document.querySelectorAll(".grid")
-    square.forEach((sq) => sq.style.background="purple")
+    square.forEach((sq) => sq.style.background="gray")
 }
 
 function randomNumber(max) {
@@ -81,6 +82,10 @@ random.addEventListener("click", () => {
     } else {
         random.textContent = "RANDOM OFF"
     }
+})
+
+colorOpen.addEventListener("click", () => {
+    selector.click()
 })
 
 selector.addEventListener("input", () => {
