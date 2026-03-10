@@ -3,43 +3,83 @@
     padding: 0;
 }
 
-#container {
-    display: flex;
-    flex-wrap: wrap;
-    top: 30px;
-    position: relative;
-    margin: 0 auto;
-    height: 960px;
-    width: 960px;
+:root {
+    --bg-color: #1a1a1e;
+    --container-bg: #252529;
+    --accent-color: #996dff;
+    --text-color: #ffffff;
+    --grid-border: rgba(255,255,255,0.05);
 }
 
-.grid {
-    outline: solid white;
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 #header {
     display: flex;
+    text-align: center;
     margin: 20px;
     flex-direction: column;
     height: 200px;
 }
 
-#options {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    flex-wrap: wrap;
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #996dff, #df6dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#title {
+    font-weight: 300;
+    color: #a9a9b2;
+    margin-bottom: 20px;
 }
 
 .options {
     margin: 20px 0px;
     width: 320px;
     display: flex;
+    margin-inline: auto;
     justify-content: space-between;
 }
 
-button {
+#container {
     display: flex;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 10px solid #323238;
+    top: 30px;
+    position: relative;
+    margin: 20px auto;
+    height: 600px;
+    width: 600px;
+}
+
+.grid {
+    box-sizing: border-box;
+    border: 0.1px solid var(--grid-border);
+}
+
+
+button {
+    background-color: var(--container-bg);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    cursor: pointer;
+    transition: all 0.2s ease;
     flex-direction: column;
     margin-block: 5px;
     justify-content: space-between;
@@ -47,13 +87,45 @@ button {
     height: 85px;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
+    font-size: 0.7rem;
+    
     
     img {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
+        margin-bottom: 5px;
+        filter: invert(1);
     }
 }
 
+button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(153, 109, 255, 0.4);
+}
+
+
 #random {
-    padding: 1px
+    padding: 1px;
+    height: 42px;
+}
+
+#selector {
+    height: 42px;
+    border: none;
+    width: 85px
+}
+
+input[type="color"] {
+    background: none;
+    appearance: none;
+    border: none;
+    cursor: pointer
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); /* Borda interna quase invisível */
 }

@@ -3,8 +3,10 @@ const reset = document.getElementById("reset")
 const title = document.getElementById("title")
 const create = document.getElementById("create")
 const random = document.getElementById("random")
+const selector = document.getElementById("selector")
 
 let isRandomMode = false;
+let color = "black"
 
 
 // FUNCTIONS
@@ -15,8 +17,8 @@ function squareGrid(n) {
             let div1 = document.createElement("div")
             div1.classList.add("grid")
             div1.style.background="gray"
-            div1.style.width=`${960/n}px`
-            div1.style.height=`${960/n}px`
+            div1.style.width=`${600/n}px`
+            div1.style.height=`${600/n}px`
             container.appendChild(div1)
         }
     }
@@ -64,7 +66,7 @@ container.addEventListener("mouseover", (e) => {
             const [r, g, b] = randomColor();
             e.target.style.background = `rgb(${r}, ${g}, ${b})`;
         } else {
-            e.target.style.background = "purple";
+            e.target.style.background = color;
         }
     }
 });
@@ -75,9 +77,16 @@ random.addEventListener("click", () => {
     isRandomMode = !isRandomMode;
 
     if (isRandomMode) {
-        random.textContent = "Mode: Random"
+        random.textContent = "RANDOM ON"
     } else {
-        random.textContent = "Mode: Purple"
+        random.textContent = "RANDOM OFF"
     }
+})
+
+selector.addEventListener("input", () => {
+    color = selector.value;
+    isRandomMode = false
+    random.textContent = "RANDOM OFF";
+    
 })
 
