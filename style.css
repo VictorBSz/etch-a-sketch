@@ -64,11 +64,15 @@ h1 {
     margin: 20px auto;
     height: 600px;
     width: 600px;
+    user-select: none;
+    --webkit-user-drag: none;
 }
 
 .grid {
     box-sizing: border-box;
     border: 0.1px solid var(--grid-border);
+    user-select: none;
+    pointer-events: auto;
 }
 
 

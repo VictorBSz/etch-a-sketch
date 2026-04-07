@@ -72,6 +72,7 @@ window.addEventListener("mouseup", (e) => {
 })
 
 container.addEventListener("mouseover", (e) => {
+    e.preventDefault();
     if (e.target.classList.contains("grid") && isDrawing == true) {
         if (isRandomMode === true) {
             const [r, g, b] = randomColor();
