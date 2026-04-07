@@ -8,6 +8,7 @@ const selector = document.getElementById("selector")
 
 let isRandomMode = false;
 let color = "black"
+let isDrawing = false
 
 
 // FUNCTIONS
@@ -61,8 +62,17 @@ function randomColor() {
 
 
 // EVENTS
+
+window.addEventListener("mousedown", (e) => {
+    isDrawing = true
+})
+
+window.addEventListener("mouseup", (e) => {
+    isDrawing = false
+})
+
 container.addEventListener("mouseover", (e) => {
-    if (e.target.classList.contains("grid")) {
+    if (e.target.classList.contains("grid") && isDrawing == true) {
         if (isRandomMode === true) {
             const [r, g, b] = randomColor();
             e.target.style.background = `rgb(${r}, ${g}, ${b})`;
